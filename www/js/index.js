@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,6 +35,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -49,3 +51,23 @@ var app = {
 };
 
 app.initialize();
+
+//jQ = jQuery.noConflict();
+
+$("#getFact").on("click", function(){
+    var factDiv = $("#factArea")[0];
+    var val = $("#numFact").val();
+    factDiv.innerHTML = "<img src='img/ajax-loader.gif'>" ;
+    $.ajax({
+        "url" : "http://numbersapi.com/"+val,
+        "method" : "GET",
+        success : function(response) {
+            console.log("Hi");
+            factDiv.innerHTML = response;
+        },
+        error : function(response) {
+            factDiv.innerHTML = "HEEEYYYOOO";
+        }
+    });
+});
+
