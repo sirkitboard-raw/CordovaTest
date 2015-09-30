@@ -57,6 +57,9 @@ app.initialize();
 $("#getFact").on("click", function(){
     var factDiv = $("#factArea")[0];
     var val = $("#numFact").val();
+    if(!val) {
+        return;
+    }
     factDiv.innerHTML = "<img src='img/ajax-loader.gif'>" ;
     $.ajax({
         "url" : "http://numbersapi.com/"+val,

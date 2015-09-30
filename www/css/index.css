@@ -4,3 +4,23 @@
     bottom: 0;
     width: 100%;
 }
+
+.header {
+    border: 1px solid #333;
+    text-align: center;
+    background: #dddddd;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 20px;
+}
+
+.body {
+    width: 90%;
+    text-align: center;
+}
+
+#getFact {
+    padding: 10px;
+    background: #008888;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
